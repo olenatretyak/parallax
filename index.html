@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Parallax</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+
+<style type="text/css">
+  h1 {
+  margin: 0;
+  }
+
+  .content {
+    background: blue;
+    height: 250px;
+  }
+
+  #parallax {
+    background: red;
+    background: url(http://st.motortrend.com/uploads/sites/5/2016/03/2017-Mercedes-AMG-CLA45-rear-three-quarter-in-motion.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    height: 550px;
+   
+  }
+</style>
+
+<body>
+
+  <div class="content">
+       content
+    </div>
+
+    <div id="parallax">
+      <h1>parallax</h1>
+    </div>
+
+    <div class="content">
+       content
+    </div>
+
+
+  <script type="text/javascript">
+    window.addEventListener('scroll', function (e) {
+      console.log(document.body.scrollTop);
+      
+      var $parallax = document.getElementById('parallax');
+      var posY = document.body.scrollTop * -0.4;
+      $parallax.style.backgroundPosition = '0px '+posY+'0px';
+    })
+  </script>
+</body>
+</html>
